@@ -1,1 +1,1 @@
-# Uses Missing filename ("less --help" for help) syntax
+# Uses `less` syntax
