@@ -1,0 +1,227 @@
+/* ==UserStyle==
+@name ETI - Nord Light
+@namespace eti
+@version 0.0.1
+@description apply nord light theme to ETI when browser prefers light theme
+@author gander
+@preprocessor less
+==/UserStyle== */
+
+// nord palette
+@nord0: #2E3440;
+@nord1: #3B4252;
+@nord2: #434C5E;
+@nord3: #4C566A;
+@nord4: #D8DEE9;
+@nord5: #E5E9F0;
+@nord6: #ECEFF4;
+@nord7: #8FBCBB;
+@nord8: #88C0D0;
+@nord9: #81A1C1;
+@nord10: #5E81AC;
+@nord11: #BF616A;
+@nord12: #D08770;
+@nord13: #EBCB8B;
+@nord14: #A3BE8C;
+@nord15: #B48EAD;
+
+@background: @nord6;
+@text: @nord0;
+@link: @nord10;
+@barText: @nord10;
+@barBg: @nord4;
+@messageBodyBg: @nord5;
+@menuLink: @nord10;
+@menuLinkVisited: @nord10;
+@menuLinkActive: @nord10;
+@menuLinkHover: @nord9;
+
+@-moz-document url-prefix("https://boards.endoftheinter.net/"),
+url-prefix("https://endoftheinter.net/profile"),
+url-prefix("https://endoftheinter.net/stats"),
+url-prefix("https://endoftheinter.net/userlist"),
+url-prefix("https://endoftheinter.net/main"),
+url-prefix("https://endoftheinter.net/poll"),
+url-prefix("https://endoftheinter.net/inbox"),
+url-prefix("https://endoftheinter.net/token"),
+url-prefix("https://endoftheinter.net/mytokens"),
+url-prefix("https://images.endoftheinter.net/imagemap") {
+
+  @media (prefers-color-scheme: light) {
+
+    body,
+    table.classic tr td {
+      background: @background;
+      color: @text;
+    }
+
+    textarea.locked {
+      background: @background;
+    }
+
+    a,
+    a:visited {
+      color: @link;
+    }
+
+    a span.m,
+    a:visited span.m {
+      border-bottom-color: @link;
+    }
+
+    div.menubar,
+    div.userbar,
+    div.infobar {
+      color: @barText;
+      background: @barBg;
+    }
+
+    .reply-nest {
+      border-left-color: @barBg;
+    }
+
+    table.message-body tr td.message,
+    div.message,
+    table.message-body tr td.userpic {
+      background: @messageBodyBg;
+    }
+
+    div.message-top {
+      background: @barBg;
+    }
+
+    table.classic tr th {
+      background: @barBg;
+      color: @barText;
+    }
+
+    table.classic tr th.title {
+      color: @text;
+    }
+
+    div.menubar a,
+    div.userbar a,
+    div.infobar a,
+    table.classic tr th a,
+    table.grid tr th a {
+      color: @menuLink;
+    }
+
+    div.menubar a:visited,
+    div.userbar a:visited,
+    div.infobar a:visited,
+    table.classic tr th a:visited,
+    table.grid tr th a:visited {
+      color: @menuLinkVisited;
+    }
+
+    div.menubar a:hover,
+    div.userbar a:hover,
+    div.infobar a:hover,
+    table.classic tr th a:hover,
+    table.grid tr th a:hover {
+      color: @menuLinkHover;
+    }
+
+    div.menubar a:active,
+    div.userbar a:active,
+    div.infobar a:active,
+    table.classic tr th a:active,
+    table.grid tr th a:active {
+      color: @menuLinkActive;
+    }
+
+    table.grid tr td,
+    table.grid tr th {
+      border-color: @background;
+    }
+
+    table.grid tr td {
+      background: @messageBodyBg;
+    }
+
+    table.grid tr th {
+      background: @barBg;
+      color: @barText;
+    }
+
+    table.search {
+      border-color: @messageBodyBg;
+    }
+
+    table.search tr th {
+      background: @messageBodyBg;
+    }
+
+    table.poll div {
+      background: @barBg;
+    }
+
+    div.graph {
+      background: @barBg;
+      border-color: @text;
+    }
+
+    div.graph span,
+    .image_grid .grid_block .block_desc {
+      background: @messageBodyBg;
+    }
+
+    .quoted-message {
+      border-left-color: @barBg;
+    }
+
+    table.message-body td.userpic {
+      border-left-color: @background;
+    }
+
+    .quickpost {
+      background: @background;
+    }
+
+    .quickpost-expanded .quickpost {
+      border-top-color: @barBg;
+    }
+
+    .quickpost .quickpost-nub {
+      background: @messageBodyBg;
+      border-color: @barBg;
+    }
+
+    .quoter-button {
+      background: @barBg;
+      border-color: @barBg;
+      color: @barText;
+    }
+
+    a.quoter-button:visited {
+      color: @barText;
+    }
+
+    .tag-pop-hover .tag-div {
+      background: @messageBodyBg;
+      border-color: @barBg;
+    }
+
+    #bookmarks span span.menubar {
+      background: @messageBodyBg  !important;
+      border-color: @barBg  !important;
+    }
+
+    .loading-placeholder {
+      background: @messageBodyBg;
+    }
+    
+
+    // default white compose box sticks out so recolor to fit light theme better
+    textarea {
+      background: @messageBodyBg !important;
+      color: @text;
+      border-color: @barBg;
+    }
+
+    textarea:focus {
+        outline: none;
+    }
+  }
+}

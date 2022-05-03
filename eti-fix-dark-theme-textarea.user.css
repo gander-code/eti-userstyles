@@ -1,0 +1,25 @@
+/* ==UserStyle==
+@name ETI - Dark Theme Textarea Fix
+@namespace eti
+@version 0.0.1
+@description change the background of compose field to a dark color and removes the white border that appears on focus
+@author gander
+@preprocessor less
+==/UserStyle== */
+
+
+@-moz-document url-prefix("https://boards.endoftheinter.net/") {
+
+  @media (prefers-color-scheme: dark) {
+    textarea {
+      background: #4C566A !important;
+      color: #E5E9F0;
+      border-color: #2E3440;
+    }
+    
+    textarea:focus {
+      outline: none;
+    }
+  }
+
+}

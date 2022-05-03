@@ -1,0 +1,7 @@
+{
+  "css.validate": false,
+  "beautify.options": {
+    "indent_size": 2,
+    "indent_char": " "
+  }
+}
