@@ -1,37 +1,112 @@
 /* ==UserStyle==
-@name ETI - Dark Theme Fixes
+@name ETI - Dark Theme Textarea Fix
 @namespace eti
-@version 0.0.1
-@description change the styling of certain inputs to match dark nord theme
+@version 0.0.2
+@description change the background of compose field to a dark color and removes the white border that appears on focus
 @author gander
 @preprocessor less
 ==/UserStyle== */
 
 
-@-moz-document url-prefix("https://boards.endoftheinter.net/") {
+@-moz-document url-prefix("https://boards.endoftheinter.net/"), url-prefix("https://endoftheinter.net/userlist"), url-prefix("https://endoftheinter.net/postmsg"), url-prefix("https://endoftheinter.net/edit"), url-prefix("https://endoftheinter.net/tag") {
 
   @media (prefers-color-scheme: dark) {
-    textarea {
+    
+    /**
+     * Textareas
+     */
+    
+    // exclude tag search / tokenizer because its styled uniquely
+    textarea:not(.V), #image_search, input[type=text] {
       background: #4C566A !important;
       color: #E5E9F0;
-      border-color: #2E3440;
+      border-color: #2E3440 !important;
+      border-width: 1px;
     }
     
-    textarea:focus {
+    // remove focus outline from all text inputs
+    textarea:focus, input[type=text] {
       outline: none;
     }
     
+    // add margin to search fields
+    input[name=q], input[name=user] {
+      margin-right: 0.5rem;
+    }
+    
+    /**
+     * Buttons
+     */
+    
+    // every button variation, including submit buttons (preview and post msg, for example)
     input[type=button], input[type=submit], button {
       background: #2E3440;
       color: #E5E9F0;
       border-color: #2E3440;
       border-radius: 4px;
       border-style: solid;
+      border-width: 1px;
     }
     
+    // change border color on hover
+    input[type=button]:hover, input[type=submit]:hover, button:hover {
+      border-color: #4C566A;
+    }
+    
+    // change background on click
+    input[type=button]:active, input[type=submit]:active, button:active {
+      background: #4C566A;
+    }
+    
+    // add left margin to every button except preview/post
     input[type=button], button {
       margin-left: 0.2rem;
     }
+    
+    /**
+     * Tag Search / Tokenizer
+     */
+    
+    // floating suggestion list
+    .W {
+      border-color: #2E3440;
+    }
+    
+    // floating suggestion list items
+    div.W > div.X.n {
+      background: #4C566A;
+    }
+    
+    // currently highlighted suggestion
+    .q {
+      background: #2E3440 !important;
+    }
+    
+    // the main tokenizer div
+    .S {
+      background: #4C566A;
+      border-color: #2E3440;
+    }
+    
+    // set color of typed text, token text and text in the suggestions list
+    textarea.V, .U {
+      color: #E5E9F0;
+    }
+    
+    // current valid tokens in the list/search
+    div.U > span > span.Y {
+      background: #2E3440;
+      border-color: #2E3440;
+    }
+    
+    /**
+     * Dramalinks Ticker (ChromeLL)
+     */
+    
+    #dramalinks_ticker {
+      margin-bottom: 0.15rem;
+    }
+    
   }
 
 }
