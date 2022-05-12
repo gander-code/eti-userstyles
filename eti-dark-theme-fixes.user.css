@@ -1,8 +1,8 @@
 /* ==UserStyle==
-@name ETI - Dark Theme Textarea Fix
+@name ETI - Dark Theme Fixes
 @namespace eti
 @version 0.0.2
-@description change the background of compose field to a dark color and removes the white border that appears on focus
+@description change the styling of certain inputs to match dark nord theme
 @author gander
 @preprocessor less
 ==/UserStyle== */
